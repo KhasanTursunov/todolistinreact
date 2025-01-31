@@ -1,0 +1,278 @@
+JavaScripda 8 ta DateType-lar bor:
+        Primitive Data Types va Non-Primitive Data Types
+                Primitive Data Types bular:
+String:
+        let name = "Khasan"
+        JavaScripda stringlar "" yoki '' yoki ``  ichida yoziladi. Va String ozining bir qamcha methodlariga ega, bular:
+        String length
+        String charAt()
+        String charCodeAt()
+        String at()
+        String [ ]
+        String slice()
+        String substring()
+        String substr()
+        String toUpperCase()
+        String toLowerCase()
+        String concat()
+        String trim()
+        String trimStart()
+        String trimEnd()
+        String padStart()
+        String padEnd()
+        String repeat()
+        String replace()
+        String replaceAll()
+        String split()
+
+
+Number:
+        let age = "21"
+        JavaScriptda + operatorini ham qoshish ham birlashtirish uchun ishlatilinadi
+
+        agar ikkita number bir biriga qoshilsa, natija number boladi
+        let x = 10;
+        let y = 20;
+        let z = x + y; 
+        console.log(30)
+
+        agar stringlar qoshilsa, natija string boladi
+        let x = "10";
+        let y = "20";
+        let z = x + y;
+
+        agar number stringga qoshilsa, natija string boladi
+        let x = 10;
+        let y = "20";
+        let z = x + y;  
+        console.log("1020")
+
+        bu holatda:
+
+        let x = "10";
+        let y = 20;
+        let z = x + y;
+        console.log("1020")
+
+
+BigInt
+
+        let money = 123456789n;
+        typeof(BigInt)      
+        JavaScripda BigInt oddiy Number ozgaruvchisi saqlay olmaydigan, qiymatlarni saqlaydi
+Symbol
+
+
+Undefined
+
+        undefined bu - qiymatsiz ozgaruvchi
+
+        let x;
+        if (x === undefined) {
+        text = "x is undefined";
+        } else {
+        text = "x is defined";
+        console.log(x is undefined)
+} 
+
+
+Boolean
+    JavaScriptda Boolean ikkita qiymat qaytaradi: true yoki false
+    Booleanda qiymatsiz hamma narsa bu - false
+
+        0 ning bollean qiymati bu false:
+
+        let x = 0;
+        Boolean(x)
+
+        -0 ning bollean qiymati bu false:
+
+        let x = -0;
+        Boolean(x);
+
+        Bosh stringni ning bollean qiymati bu false:
+
+        let x = "";
+        Boolean(x);
+
+        undefined ning bollean qiymati bu false:
+
+        let x;
+        Boolean(x);
+
+        null ning bollean qiymati bu false:
+    
+        let x = null;
+        Boolean(x);
+
+        Nan ning bollean qiymati bu false:
+        let x = 10 / "Hallo";
+        Boolean(x);
+
+Null
+        JavaScriptda Null bu Primitive Data type bolishiga qaramay, typeof object qaytaradi
+
+
+
+        Non-Primitive Data Types bu:
+Object
+
+        typeof {name:'John'}   // Returns object
+        typeof [1,2,3,4]       // Returns object
+
+        typeof function (){}   // Returns function
+
+
+
+                 Memory Allocation qanday ishlaydi?
+
+Memory Allocation 2 turga bolinadi, Static Allocation va Dynamic Allocation
+
+JavaScript avtomatik xotira boshqarish (garbage collection) bilan ishlaydi.
+
+Stack: Oddiy o‘zgaruvchilar (let, const, var) ni saqlaydi
+
+Heap: Obyektlar, arraylar, funksiyalarni saqlaydi
+
+masalan: 
+        let raqam = 10 ==> bu stack xotiraga joylashadi
+
+        let object = {ism: Khasan} ==> bu heap hotiraga saqlanadi
+
+
+
+
+                                    Closure nima?
+Closure bu ==>  ichki funksiya tashqi funksiya tugaganidan keyin ham uning o‘zgaruvchilarini yoki qiymatlarini eslab qoladi
+va ulardan foydalanadi. manshu clousure bolajonlar
+
+
+                                    Garbage collection?
+
+Garbage collection haqida tushunganim shuki u - Dastur tez ishlashligi uchun-  dasturda keraksiz ishlanmayotgan malumotlarni ochirib tashlaydi
+
+
+Execution Context 3 turga bolinadi :
+
+
+1) Global Execution Context
+        Dastur ishga tushganda avtomatik hosil bo‘ladi.
+
+2)  Function Execution Context
+        Har safar funksiya chaqirilganda yangi execution context yaratiladi.
+
+3)  Eval Execution Context
+        eval() funksiyasi ishlatilganda hosil bo‘ladi (kamdan-kam qo‘llaniladi).
+
+
+
+                                Call stack?
+
+function first() {
+    console.log("First function");
+    second();
+}
+
+function second() {
+    console.log("Second function");
+}
+
+first();
+console.log("End");
+
+
+
+1️) first() chaqiriladi → Call Stack’ga qo‘shiladi.
+
+2️) console.log("First function") ishlaydi.
+
+3️) second() chaqiriladi → Call Stack’ga qo‘shiladi.
+
+4️) console.log("Second function") ishlaydi.
+
+5️) second() tugaydi va Call Stack’dan o‘chiriladi.
+
+6️) first() tugaydi va Call Stack’dan o‘chiriladi.
+
+7️) console.log("End") ishlaydi.
+
+                            
+
+                                    Scope nimaa?
+                    
+JavaScriptda 3 asosiy scope bor: 
+
+
+Global Scope bu -  function yoki block scope ichida bolmagan ozgaruvchilar global scopeni ichida boladi.
+
+Function Scope  bu - Funksiya ichida e'lon qilingan o‘zgaruvchilarga faqat shu funksiya ichida kirish mumkin.
+var, let, const bilan e'lon qilingan o‘zgaruvchilar funksiya tashqarisida ko‘rinmaydi.
+
+let va const bilan e'lon qilingan o‘zgaruvchilar faqat {} ichida ishlaydi.
+var esa blok scope’ga bog‘liq emas, balki faqat function scope’ga ega. 
+
+
+Tushuncha shuki:
+Global Scope – butun kod bo‘ylab ishlaydi.
+    Function Scope – faqat funksiya ichida ishlaydi.
+        Block Scope (let va const) – faqat {} ichida ishlaydi.
+
+
+                                        Scope chaining bu nime?
+
+Scope chaining – bu ichki funksiya o‘zgaruvchilarni o‘z scope’ida topa olmasa, tashqaridagi scope’lardan izlash jarayoni.
+yani JavaScriptda ozgaruvchilar avval oz scopeida qidiriladi. Agar topilmasa, tashqi scopega chiqib qidiradi. Agar u ham topilmasa,
+global scopega qadar qidiradi. Agar global scopeda ham bolmasa, xato (ReferenceError) yuzaga keladi.
+
+
+let varibale = "Scope chaining"; 
+
+function tashqaridagiFunksiya() {
+    let outerVar = "Men outer funksiyaman!"; 
+
+    function inner() {
+        let innerVar = "Men inner funksiyaman!";
+        console.log(innerVar);  // ✅ Ichki scope'da bor
+        console.log(outerVar);  // ✅ Tashqi scope'dan topiladi
+        console.log(globalVar); // ✅ Global scope'dan topiladi
+    }
+
+    inner();
+}
+
+outer();
+
+
+ Xooop buni endi bajarilish tartibi:
+
+1) inner() funksiyasi ichida innerVar o‘z scope’ida bor – to‘g‘ridan-to‘g‘ri topiladi.
+
+2️) outerVar inner scope’da yo‘q, shuning uchun tashqaridagi outer() scope’ga chiqib qidiradi.
+
+3) globalVar inner va outer scope’da yo‘q, shuning uchun global scope’dan topiladi.
+
+
+
+                                    Lexical environment?
+                            
+xulosa shuki Scope chaining -  Lexical environment asosida ishlaydi chunki 
+
+
+                                    Callback shto eto?
+
+Callback bu - boshqa bir funksiya argument sifatida qabul qiladigan va keyinroq chaqiriladigan funksiya
+
+
+
+                                    Shallow copy and Deep copy
+
+Shallow copy va Deep Copy bu - object yoki arrayni boshqa bir yangi abject yoki arrayga nusxalash
+
+farqi shundaki - Shallow copy - original array yoki objectdan nusxa oladi lekin yangi array yoki object ozgarganida, 
+orginal array yoki object ham ozgaradi
+
+a deep copy bu - array yoki objectni toliq nusxalaydi va uning ichidagi object yoki arraylarigacha nusxalaydi,
+va nusxalangan object yoki array ozgartirilganda, orginal array yoki objectga ta'sir qilmaydi
+shuning uchun bu deep - chuqur nusxalash deyiladi
+
+va bugungi darsimiz tamom !
